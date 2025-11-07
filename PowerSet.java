@@ -1,5 +1,5 @@
+// subsets of a string 
 
-//QUES: 39,40 [LEETCODE]
 class Main {
     public static void main(String[] args) {
         String s = "abc";
@@ -19,7 +19,6 @@ class Main {
 }
 
 // subsets of an array
-
 /* 
 List<List<Integer>> ans = new ArrayList<>();
         powerSet(nums,0,new ArrayList<>(),ans);
