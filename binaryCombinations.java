@@ -3,19 +3,18 @@ import java.util.List;
 
 class Main {
     public static void main(String[] args) {
-        List<List<String>> l = new ArrayList<>();
+        List<String> li = new ArrayList<>();
         int n=3;
-        l.add(binary(n,0,0,"",new ArrayList<String>()));
-        System.out.println(l);
+        binary(n,"",li,0);
+        System.out.println(li);
     }
 
-    static void binary(int n,int one,int zero,String s,ArrayList<String> ans){
-        if(n==s.length()){
-            ans.add(s);
-            System.out.println(ans);
+    static void binary(int n,String s,List<String> l,int i){
+        if(i==n){
+            l.add(s);
             return;
         }
-        binary(n,one+1,zero,s+"1",ans);
-        binary(n,one,zero+1,s+"0",ans);
+        binary(n,s+"1",l,i+1);
+        binary(n,s+"0",l,i+1);
     }
 }
