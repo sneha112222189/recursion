@@ -1,21 +1,21 @@
-import java.util.ArrayList;
+import java.util.*;
 
 class Main{
     public static void main(String[] args) {
-        List<List<Integer>> l = new ArrayList<>();
+        List<String> l = new ArrayList<>();
         int n=3;
-        noConsecutiveOnes(new ArrayList<String>(), n, "", 0);
+        noConsecutiveOnes(l, n, "");
+        System.out.println(l);
     }
 
-    static void noConsecutiveOnes(List<String> l,int n,String ans,int i){
+    static void noConsecutiveOnes(List<String> l,int n,String ans){
         if(ans.length()==n){
             l.add(ans);
-            System.out.println(l);
             return;
         }
-        noConsecutiveOnes(l, n, ans+'0', i+1);
-        if(ans.charAt(i)==0 || ans.charAt(i)==null){
-            noConsecutiveOnes(l, n, ans+'1', i);
+        noConsecutiveOnes(l, n, ans+'0');
+        if(ans.length()==0 || ans.charAt(ans.length()-1)=='0'){
+            noConsecutiveOnes(l, n, ans+'1');
         }
     }
     
