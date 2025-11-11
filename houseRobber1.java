@@ -11,7 +11,7 @@ class Main {
         System.out.println(max);
     }
 
-    int money(int[] nums,int n,int i,int[] dp){
+    static int money(int[] nums,int n,int i,int[] dp){
     if(i==n){
         return nums[i];
     }
