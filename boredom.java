@@ -6,7 +6,6 @@ class Main {
         Arrays.sort(arr);
         int[] dp = new int[arr.length];
         Arrays.fill(dp, -1);
-        
         int max=arr[arr.length-1];
         int[] freq=new int[max+1];
         for(int i : arr) {
