@@ -8,14 +8,9 @@ class Main {
         Arrays.sort(arr);
         int max=arr[arr.length-1];
         int[] freq=new int[max+1];
-        for(int i=0;i<freq.length;i++){
-            freq[i]=0;
-            for(int j=0;j<arr.length;j++){
-                if(arr[j]==i){
-                    freq[i]++;
-                }
-            }
-        }
+        for(int i : arr) {
+            freq[i]++;
+        }           
         int result = boredom(freq,0,freq.length-1,dp);
         System.out.println(result);
     }
