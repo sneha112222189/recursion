@@ -3,9 +3,10 @@ import java.util.*;
 class Main {
     public static void main(String[] args) {
         int[] arr = {1,1,2,2,2,2,2,3,3,3,4};
-        int[] dp = new int[arr.length];
-        for(int x = 0; x < dp.length; x++) {dp[x]=-1;}
         Arrays.sort(arr);
+        int[] dp = new int[arr.length];
+        Arrays.fill(dp, -1);
+        
         int max=arr[arr.length-1];
         int[] freq=new int[max+1];
         for(int i : arr) {
