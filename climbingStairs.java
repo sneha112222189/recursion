@@ -1,17 +1,17 @@
 
 class Main {
     public int climbStairs(int n) {
-        if(n<2){
-            return n;
-        }
-        ways(n,1,2,3);
-    }
+        if(n==0 || n==1) return 1;
+        
+        int prev1=1;
+        int prev2=1;
 
-    static int ways(int n,int prev1,int prev2,int current){
-        if(current>n){
-            return prev2;
+        for(int i=2;i<=n;i++){
+            int curr=prev1+prev2;
+            prev2=prev1;
+            prev1=curr;
         }
-        return ways(n,prev2,prev1+prev2,current+1);
+        return prev1;
     }
 }
 
