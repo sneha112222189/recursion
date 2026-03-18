@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Solution {
+class frogJump {
     int minCost(int[] height){
         int[] dp = new int[height.length];
         Arrays.fill(dp,-1);

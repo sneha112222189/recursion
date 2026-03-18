@@ -4,30 +4,30 @@ import java.io.*;
 
 class ninjaTraining{
     //MEMOIZATION
-    public static void main(String[] args) throws Exception{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int max = 0;
-        int t = Integer.parseInt(br.readLine());
-        while(t>0){
-            int n = Integer.parseInt(br.readLine());
-            int[][] arr = new int[n][3];
-            for(int i=0;i<n;i++){
-                StringTokenizer st = new StringTokenizer(br.readLine());
-                arr[i][0] = Integer.parseInt(st.nextToken());
-                arr[i][1] = Integer.parseInt(st.nextToken());
-                arr[i][2] = Integer.parseInt(st.nextToken());
-            }
+    // public static void main(String[] args) throws Exception{
+    //     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    //     int max = 0;
+    //     int t = Integer.parseInt(br.readLine());
+    //     while(t>0){
+    //         int n = Integer.parseInt(br.readLine());
+    //         int[][] arr = new int[n][3];
+    //         for(int i=0;i<n;i++){
+    //             StringTokenizer st = new StringTokenizer(br.readLine());
+    //             arr[i][0] = Integer.parseInt(st.nextToken());
+    //             arr[i][1] = Integer.parseInt(st.nextToken());
+    //             arr[i][2] = Integer.parseInt(st.nextToken());
+    //         }
 
-            int[][] dp = new int[n][4];
-            for(int i=0;i<n;i++) Arrays.fill(dp[i],-1);
+    //         int[][] dp = new int[n][4];
+    //         for(int i=0;i<n;i++) Arrays.fill(dp[i],-1);
 
             
-            max = Math.max(max,ninja(dp,arr,0,3));
-            System.out.println(max);
-            t--;
-        }
+    //         max = Math.max(max,ninja(dp,arr,0,3));
+    //         System.out.println(max);
+    //         t--;
+    //     }
         
-    }
+    // }
 
     static int ninja(int[][] dp,int[][] arr,int day,int last){
         if(day==arr.length-1){
