@@ -11,16 +11,27 @@ class targetSum{
         for(int i=0;i<n;i++){
             arr[i]=Integer.parseInt(st.nextToken());
         }
-        System.out.println(solve(arr,0,t,0));
-    }
+        int sum=0;
+        for(int num : arr) sum+=num;
 
-    static int solve(int[] arr,int i,int target,int prev){
-        if(i==arr.length-1){
-            if(arr[i]==target) return 1;
-            return 0;
+        if((sum+t)%2!=0 || sum<Math.abs(t)) 
+            System.out.println(0);
+        else{
+            int s = (sum+t)/2;
+            System.out.println(solve(arr,s));
         }
 
-        int plus = solve(arr,i+1,target-arr[i],arr[i]);
-        int neg = solve(arr,i+1,target+arr[i],arr[i]);
+    }
+
+    static int solve(int[] arr,int s){
+        int[] dp = new int[s+1];
+        dp[0]=1;
+
+        for(int num : arr){
+            for(int j=s;j>=num;j--){
+                dp[j]+=dp[j-num];
+            }
+        }
+        return dp[s];
     }
 }
