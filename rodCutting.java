@@ -19,7 +19,7 @@ class rodCutting{
     }
 
     static int solve(int[] price,int i,int n,int[][] dp){
-        if(i==price.length) return 0;
+        if(i==price.length ) return 0;
         if(n==0) return 0;
 
             if(dp[i][n]!=-1) return dp[i][n];
